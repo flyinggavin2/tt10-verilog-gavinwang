@@ -24,7 +24,7 @@ module lif(
     end
 
     //next state logic
-    assign next_state = current + beta * (state >> 1); 
+    assign next_state = current + (state >> 1); 
     //right shift state by 1 to divide by 2, effectively implementing the decay factor (beta) in the update rule. This is a simple approximation of the LIF model's behavior.
     // Example update rule (8 bits + (8bits * 8bits) = 16 bits, but we only take the lower 8 bits), Maximum value: 255 × 255 = 65,025, which fits safely inside the 16-bit unsigned maximum of 65,535 (2¹⁶ - 1).
 

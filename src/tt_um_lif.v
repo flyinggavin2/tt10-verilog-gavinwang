@@ -32,6 +32,15 @@ module tt_um_lif (
       .state(uo_out),    // Connect uo_out to the state output of lif
       .spike(uio_out[7])           // Spike output is not connected in this example, but you can connect it to uio_out[7] if needed
   );
+
+  //connected lif2 to outputs of lif1
+  lif lif2 (
+      .current({uio_out[7], 7'b0}),  // need 8 bits so concatenate. 
+      .clk(clk),         // Connect clk to the clock input of lif
+      .reset_n(rst_n),   // Connect rst_n to the reset input of lif
+      .state(uo_out),    // Connect uo_out to the state output of lif
+      .spike(uio_out[7])           // Spike output is not connected in this example, but you can connect it to uio_out[7] if needed
+  );
   
 
 endmodule
