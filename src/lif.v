@@ -1,11 +1,11 @@
-`default_nettype 
+`default_nettype none
 
 module lif(
     input wire [7:0] current,
     input wire clk,
     input wire reset_n,
     output reg [7:0] state,
-    output wire spike, // based off logic gate
+    output wire spike // based off logic gate
 );
     wire [7:0] next_state;
     reg [7:0] threshold; // Example threshold value  represents an 8-bit unsigned integer with a decimal value of 10 (stored in binary as 00001010
